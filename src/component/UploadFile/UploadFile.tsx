@@ -40,15 +40,15 @@ function UploadFile() {
   return (
     <div className="input">
       <input
-        className="input--file"
+        className="input__file"
         type="file"
         name="file"
         accept=".csv"
         id="file"
         onChange={handleChange}
       />
-      <label className="input--label" htmlFor="file">
-        <MdCloudUpload className="input--label__icon" size={"1.2em"} />
+      <label className="input__label" htmlFor="file">
+        <MdCloudUpload size={"1.2em"} />
         Upload File
       </label>
     </div>

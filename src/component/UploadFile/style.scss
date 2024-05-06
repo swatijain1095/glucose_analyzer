@@ -1,5 +1,5 @@
 .input {
-  &--file {
+  &__file {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -8,7 +8,7 @@
     z-index: -1;
   }
 
-  &--label {
+  &__label {
     display: flex;
     gap: 10px;
     align-items: center;

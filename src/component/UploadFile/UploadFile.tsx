@@ -1,4 +1,6 @@
 import Papa from "papaparse";
+import "./style.scss";
+import { MdCloudUpload } from "react-icons/md";
 
 function UploadFile() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,8 +38,19 @@ function UploadFile() {
   };
 
   return (
-    <div>
-      <input type="file" name="file" accept=".csv" onChange={handleChange} />
+    <div className="input">
+      <input
+        className="input__file"
+        type="file"
+        name="file"
+        accept=".csv"
+        id="file"
+        onChange={handleChange}
+      />
+      <label className="input__label" htmlFor="file">
+        <MdCloudUpload size={"1.2em"} />
+        Upload File
+      </label>
     </div>
   );
 }

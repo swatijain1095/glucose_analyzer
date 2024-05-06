@@ -8,6 +8,7 @@ function UploadFile() {
       Papa.parse<File>(e.target.files[0], {
         header: true,
         skipEmptyLines: true,
+        dynamicTyping: true,
         transformHeader: (header: string) => {
           const regExp = new RegExp("[\\s_()-]+");
           const newHeader = header

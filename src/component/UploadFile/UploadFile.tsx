@@ -1,6 +1,8 @@
 import Papa from "papaparse";
 import "./style.scss";
 import { MdCloudUpload } from "react-icons/md";
+import { getPolishedData } from "../../utils/getPolishedData";
+import { RawCsvDataItem } from "../../types";
 
 function UploadFile() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -8,6 +10,7 @@ function UploadFile() {
       Papa.parse<File>(e.target.files[0], {
         header: true,
         skipEmptyLines: true,
+        dynamicTyping: true,
         transformHeader: (header: string) => {
           const regExp = new RegExp("[\\s_()-]+");
           const newHeader = header
@@ -31,7 +34,12 @@ function UploadFile() {
         },
 
         complete: function (results) {
-          console.log(results.data);
+          console.time("upload");
+          const data = getPolishedData(
+            results.data as unknown as RawCsvDataItem[]
+          );
+          console.timeEnd("upload");
+          console.log(data);
         },
       });
     }

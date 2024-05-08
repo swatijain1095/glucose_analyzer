@@ -2,6 +2,7 @@ import {
   GlucoseData,
   InsulinData,
   InsulinType,
+  MainData,
   RawCsvDataItem,
 } from "../types";
 import { getSortedData } from "./getSortedData";
@@ -58,7 +59,7 @@ const getFormattedGlucoseData = (
   };
 };
 
-export const getPolishedData = (data: RawCsvDataItem[]) => {
+export const getPolishedData = (data: RawCsvDataItem[]): MainData => {
   const glucoseData: GlucoseData[] = [];
   const insulinData: InsulinData[] = [];
   const timeRefenceArray = getTimeRefernceArray();
@@ -184,5 +185,8 @@ export const getPolishedData = (data: RawCsvDataItem[]) => {
   );
 
   console.log({ glucoseData, insulinData });
-  return data;
+  return {
+    glucoseData,
+    insulinData,
+  };
 };

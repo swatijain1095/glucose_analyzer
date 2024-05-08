@@ -1,5 +1,12 @@
 import moment from "moment";
 
+export type setStateType<T> = React.Dispatch<React.SetStateAction<T>>;
+
+export interface MainData {
+  glucoseData: GlucoseData[];
+  insulinData: InsulinData[];
+}
+
 export interface GlucoseData {
   value: number;
   timeStamp: moment.Moment;

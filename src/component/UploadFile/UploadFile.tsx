@@ -2,9 +2,13 @@ import Papa from "papaparse";
 import "./style.scss";
 import { MdCloudUpload } from "react-icons/md";
 import { getPolishedData } from "../../utils/getPolishedData";
-import { RawCsvDataItem } from "../../types";
+import { MainData, RawCsvDataItem, setStateType } from "../../types";
 
-function UploadFile() {
+interface UploadFileProp {
+  setData: setStateType<MainData>;
+}
+
+function UploadFile({ setData }: UploadFileProp) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       Papa.parse<File>(e.target.files[0], {
@@ -38,6 +42,7 @@ function UploadFile() {
           const data = getPolishedData(
             results.data as unknown as RawCsvDataItem[]
           );
+          setData(data);
           console.timeEnd("upload");
           console.log(data);
         },
@@ -46,16 +51,16 @@ function UploadFile() {
   };
 
   return (
-    <div className="input">
+    <div className="upload-container">
       <input
-        className="input__file"
+        className="upload-container__file"
         type="file"
         name="file"
         accept=".csv"
         id="file"
         onChange={handleChange}
       />
-      <label className="input__label" htmlFor="file">
+      <label className="upload-container__label" htmlFor="file">
         <MdCloudUpload size={"1.2em"} />
         Upload File
       </label>

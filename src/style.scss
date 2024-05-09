@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  font-family: "Mulish";
+  font-style: normal;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}

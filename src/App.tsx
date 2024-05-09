@@ -3,6 +3,7 @@ import ChartsSetup from "./component/Charts/ChartsSetup";
 import UploadFile from "./component/UploadFile/UploadFile";
 import Widgets from "./component/Widget/Widgets";
 import { MainData } from "./types";
+import "./style.scss";
 
 const initialState = {
   glucoseData: [],

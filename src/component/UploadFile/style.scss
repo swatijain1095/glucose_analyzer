@@ -1,4 +1,7 @@
 .upload-container {
+  display: flex;
+  justify-content: right;
+
   &__file {
     width: 0.1px;
     height: 0.1px;
@@ -10,10 +13,10 @@
 
   &__label {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     justify-content: center;
-    width: 125px;
+    width: 140px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     font-weight: 500;
@@ -21,7 +24,7 @@
     background-color: #1976d2;
     cursor: pointer;
     border-radius: 5px;
-    padding: 10px;
+    padding: 13px;
     text-transform: uppercase;
 
     &:hover {

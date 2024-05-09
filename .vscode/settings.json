@@ -1,0 +1,13 @@
+{
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.tabWidth": 2,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "emmet.preferences": {},
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}
